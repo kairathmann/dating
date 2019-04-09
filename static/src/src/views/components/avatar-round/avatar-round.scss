@@ -1,0 +1,22 @@
+@import "./../../../views/styles/mixins";
+
+.avatar-round {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  // for chrome bug
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  position: relative;
+
+  @for $i from 1 through 10 {
+    &.height-#{$i} {
+      @include luna-float-shadow($i);
+    }
+  }
+
+  .avatar-round-image {
+    width: 100%;
+    @extend %center-xy;
+
+  }
+}

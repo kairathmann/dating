@@ -1,0 +1,29 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+
+.button {
+  font-family: $main-font;
+  border-radius: 0.3rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+.button-main {
+  color: white;
+  background-image: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+}
+
+.button-no-border {
+  border: none;
+}
+
+.button-no-background {
+  border: none;
+  background: none;
+}

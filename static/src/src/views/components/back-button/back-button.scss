@@ -1,0 +1,15 @@
+@import './../../../views/styles/settings';
+
+.back-button {
+  background: none;
+  border: none;
+  padding: 0;
+
+  transition: all 0.2s ease;
+  font-size: 2.56rem;
+
+  &:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}

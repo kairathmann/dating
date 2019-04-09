@@ -1,0 +1,68 @@
+@import './settings';
+@import './mixins';
+@import './fonts/lato.css';
+@import './fonts/roboto.css';
+@import './fonts/materialicons.css';
+
+html {
+  overflow-y: scroll;
+}
+
+html, body, #root, #root > div, #root > div > main {
+  height: 100%;
+  min-width: 320px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 500px;
+
+}
+
+#root, #root > div, #root > div > main, // main components
+.sticky .header, .user-message-input.stick-down, .full-screen-container { //fix for position:fixed elements
+  @include respond-to($to: $main-break-point) {
+    max-width: 520px;
+    margin: auto;
+  }
+}
+
+html {
+  font-size: 10px; // if sizes are in rem, this will later be used for responsiveness
+}
+
+.luna-logo {
+  height: 50px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  //see preloader.css for duplication. for some reason both needed. todo: make it as DRY ass possible
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+
+  background: $body-bg;
+
+  background-image: url('./../../images/background_logo.svg'), linear-gradient(90deg, #0f022e, #4f124d);
+  background-position: 50% 50%, 0 0;
+  background-size: cover, auto;
+  background-repeat: repeat-y, repeat;
+
+  .luna-app-main {
+    background-color: white;
+  }
+}
+
+// Toastify notification messages override
+.toastify-content--success {
+  background-color: $notification-success !important;
+}
+
+.toastify {
+  word-break: break-word;
+}
+

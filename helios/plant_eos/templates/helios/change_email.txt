@@ -1,0 +1,7 @@
+
+You've requested that we change your account's email address from {{ RECIPIENT_EMAIL }}
+to {{ PROPOSED_EMAIL }}<br/><br/>
+
+To go ahead with this change, click the link below
+
+Confirmation URL: {{ CONFIRM_URL }}

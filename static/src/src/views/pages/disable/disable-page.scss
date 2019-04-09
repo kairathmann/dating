@@ -1,0 +1,83 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+@import './../../../views/styles/ui-kit';
+
+.disable-page {
+  background: $main-gray-bg-color;
+
+  .questionnaire-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .manage-buttons {
+    font-weight: 300;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    padding-bottom: 5rem;
+
+    p {
+      padding: 0 16px;
+
+      .strong {
+        font-weight: bold;
+      }
+    }
+
+    .manage-button {
+
+      @extend %auth-main-btn;
+      max-width: 32rem;
+      background: none;
+    }
+
+    .filled-button {
+      background: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+      border: none;
+
+      &:hover {
+        background-color: $primary-text-color;
+        background: linear-gradient(90deg, $primary-gradient-hover-start, $primary-gradient-hover-end);
+      }
+
+      &:disabled {
+        background-image: linear-gradient(to right, $disabled-btn-color, $disabled-btn-color);
+        background-color: $disabled-btn-color;
+        color: $purple-text-color;
+        cursor: auto;
+        &:hover {
+          background-image: linear-gradient(to right, $disabled-btn-color, $disabled-btn-color);
+          background-color: $disabled-btn-color;
+          color: $purple-text-color;
+        }
+      }
+    }
+    .link-button {
+      border: none;
+      color: $primary-text-color;
+      text-decoration: underline;
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  .back-button {
+    background: none;
+    border: none;
+    padding: 0;
+    transition: all 0.2s ease;
+    font-size: 2.56rem;
+  }
+  .back-button:hover {
+    cursor: pointer;
+  }
+}

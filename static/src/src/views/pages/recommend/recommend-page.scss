@@ -1,0 +1,123 @@
+@import "../../styles/settings";
+@import "../../styles/mixins";
+@import "../../styles/ui-kit";
+
+.recommend-page {
+  @extend %page;
+  display: flex;
+  flex-direction: column;
+
+  .page-content-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .image-container {
+    $recommend-page-radius: 3.1rem; // should be in px/rem, not in percentage,
+    padding: $medium-page-padding;
+
+    background: $bg-light-color;
+    position: relative;
+    .padding-holder, .user-img {
+      border-radius: $recommend-page-radius;
+    }
+    min-width: 15rem;
+
+    .user-img {
+      max-width: 100%; //todo: handle nicely (with @amnon) square horizontal and vertical image
+      max-height: 50rem;
+      border-radius: $recommend-page-radius;
+    }
+
+    .padding-holder {
+      position: relative;
+      min-height: 16rem //till image is loaded
+    }
+
+    .user-text-container {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      height: 30%;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background-image: linear-gradient(to top, #000000, rgba(0, 0, 0, 0.0));
+      border-radius: 0 0 $recommend-page-radius $recommend-page-radius; // only bottom
+    }
+    .user-text {
+      display: flex;
+      //justify-content: space-between;
+      color: white;
+    }
+    .user-name-age {
+      font-size: 2.08rem;
+      margin-right: 2.56rem;
+    }
+
+    .button-info {
+      vertical-align: middle;
+      color: white;
+      padding: 0;
+    }
+    .info-icon {
+      font-size: 2.88rem;
+    }
+  }
+
+  .skip-button {
+    @extend %auth-main-btn;
+    margin-top: 5rem;
+    max-width: 32rem;
+    background: none;
+  }
+
+  .filled-button {
+    background: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+    border: none;
+
+    &:hover {
+      background: linear-gradient(90deg, $primary-gradient-hover-start, $primary-gradient-hover-end);
+    }
+  }
+
+  .no-matches {
+    flex: 1;
+    color: white;
+    background-color: $primary-bg-color2;
+    padding: $page-container-padding-bigger;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('./../../../images/icon.svg');
+
+    .msg {
+      //font-family: 'Roboto';
+      font-size: 2.5rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+
+      &.line1 {
+        margin-bottom: 2rem;
+      }
+      &.title {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  @media (max-height: 650px) {
+    display: block;
+    background-color: white;
+    height: auto;
+  }
+}

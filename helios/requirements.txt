@@ -1,0 +1,5 @@
+boto3==1.9.66
+imgix==2.0.0
+mock==2.0.0
+requests==2.21.0
+watchtower>=0.5

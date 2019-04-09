@@ -1,0 +1,43 @@
+@import './../../styles/settings';
+@import './../../styles/ui-kit';
+
+.questionnaire {
+  max-width: 32rem;
+  flex: 1;
+
+  .errors {
+    color: #eb1477;
+    margin: 1.5em 0;
+  }
+
+  .textarea {
+    margin-top: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+    font-size: 95%;
+    box-sizing: border-box;
+    resize: none;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    border: 0;
+
+    min-height: 12rem;
+
+  }
+  .reasons {
+    label {
+      display: block;
+      text-align: left;
+      margin: 8px 0;
+    }
+  }
+  .input-group {
+    @extend %input-group;
+
+    margin-top: 1rem;
+
+    .input {
+      @extend %input-group-input;
+    }
+  }
+}

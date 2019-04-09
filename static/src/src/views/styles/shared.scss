@@ -1,0 +1,133 @@
+@import './settings';
+@import './mixins';
+
+.text, p, h1, h2, h3, h4, h5, h6, textarea, input {
+  font-family: $main-font;
+
+  /*
+    coloring (importance)
+   */
+  &.black {
+    color: black;
+  }
+  &.semi-black {
+    color: #4a4a4a;
+  }
+  &.gray {
+    color: $gray-text-color
+  }
+  &.white {
+    color: white;
+  }
+  /*
+    coloring (state)
+  */
+  &.active {
+    color: $active-color;
+  }
+  &.disabled {
+    color: $disabled-color;
+  }
+  &.fail {
+    color: $status-red;
+  }
+
+  /*
+    weight (importance)
+  */
+  &.thin {
+    font-weight: 100;
+  }
+  &.semi-thin {
+    font-weight: 300;
+  }
+  &.regular-weight {
+    font-weight: 500;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+  &.x-bold {
+    font-weight: 900;
+  }
+  //&.semi-bold{
+  //  font-weight: 600;
+  //}
+
+  /*
+    size
+   */
+
+  &.small {
+    font-size: 80%;
+  }
+  &.regular-size {
+    font-size: 100%; //16
+  }
+  &.mid-large {
+    font-size: 110%;
+  }
+  &.large {
+    font-size: 120%;
+  }
+  &.x-large {
+    font-size: 130%;
+  }
+  &.double-size {
+    font-size: 2rem; // todo: maybe I should change all sizes to rem.
+  }
+
+  /*
+   position
+   works with block elements like div (spanning to full width)
+   */
+  &.center {
+    text-align: center;
+  }
+}
+
+.luna-slider {
+  clear: both;
+  margin: 0 0 1em 0;
+
+  .rc-slider-track {
+    background-color: $primary-color;
+  }
+
+  .rc-slider-handle {
+    width: 2rem;
+    height: 2rem;
+    margin-top: -0.8rem;
+    border: solid 0.2rem $primary-color;
+    &:hover {
+      border-color: $primary-color;
+      box-shadow: 1px 0 1px 0 $primary-color;
+    }
+  }
+}
+
+.text-area-counter {
+  margin: 0;
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
+// Select component custom theme
+$select-height: 6rem;
+.Select-control {
+  border: none !important;
+  height: $select-height !important;
+  line-height: $select-height !important;
+  border-radius: 1rem !important;
+
+  .Select-value {
+    line-height: $select-height !important;
+  }
+  .Select-placeholder {
+    line-height: $select-height !important;
+  }
+}
+
+.Select-menu-outer {
+  border: none !important;
+}

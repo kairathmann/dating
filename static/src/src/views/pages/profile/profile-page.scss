@@ -1,0 +1,102 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+
+.profile-page {
+
+  @extend %page;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2.56rem;
+  }
+
+  $actions-height: 11rem;
+
+  .main-page-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: $main-gray-bg-color;
+
+    .profile-image-container {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .profile-image {
+      width: 100%;
+    }
+
+    .scroll-container {
+      overflow: scroll;
+      flex: 1;
+      margin-bottom: $actions-height;
+    }
+    .profile-details {
+      padding: $page-container-padding-smaller;
+    }
+    .profile-header {
+      .stars {
+        font-weight: normal;
+        float: right;
+      }
+      img {
+        height: 1.6rem;
+        width: 1.6rem;
+        padding: 0 1rem;
+      }
+
+    }
+
+    .tagline {
+      margin-top: 0.6rem;
+    }
+    .bio {
+      margin-top: 1.6rem;
+    }
+
+    .actions {
+      height: $actions-height;
+      text-align: center;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: $page-container-padding-smaller;
+      box-sizing: border-box;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), white);
+
+      .button {
+        height: 100%;
+        border-radius: 1.28rem;
+        border: none;
+        box-shadow: 0 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.5);
+        padding: 0rem 1.6rem;
+        background: white;
+        letter-spacing: 1px;
+
+        &:not(:first-child) {
+          margin-left: 2rem;
+        }
+      }
+      .edit-profile-btn {
+        flex: 1;
+      }
+
+      .buy-stars-btn {
+        display: flex;
+        align-items: center;
+        .buy-stars-icon {
+          height: 2.1em;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+  }
+}

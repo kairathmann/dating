@@ -1,0 +1,23 @@
+@import './../../../../views/styles/settings';
+@import './../../../../views/styles/mixins';
+
+.token-balance-page {
+  @extend %page-flex;
+  color: white;
+
+  .token-balance-body {
+    @extend %page-container;
+    height: 100%;
+    background-color: $primary-bg-color;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    .token-btn-img {
+      height: 7rem;
+    }
+
+  }
+
+}

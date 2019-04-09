@@ -1,0 +1,15 @@
+@import "../../styles/settings";
+@import "../../styles/mixins";
+
+.full-screen-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 101; // todo : perhaps put all z indexes in one place (sty/es/settings)
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: linear-gradient(-134deg, $primary-gradient-start, $primary-gradient-end);
+}

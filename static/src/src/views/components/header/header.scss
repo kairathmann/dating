@@ -1,0 +1,82 @@
+@import './../../styles/settings';
+
+$height: 6.4rem;
+
+.header-wrapper {
+
+  &.sticky {
+    //height: $height;
+    padding-top: $height;
+    .header {
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+  }
+
+}
+
+.header {
+  $color: white;
+  //padding: 0;
+  height: $height;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $header-padding;
+  box-sizing: border-box;
+  &:not(.absolute) {
+    background-image: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+  }
+  &.absolute {
+    position: absolute;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent); // some shade for white backgrounds
+  }
+  //line-height: 4rem;
+  color: $color;
+
+  .button {
+    color: $color;
+    background: none;
+    border: none;
+    display: block;
+    padding: 0;
+    .luna-icon {
+      display: block;
+    }
+  }
+
+  &.equal-sides-for-strict-center {
+    $side: 20%;
+    > :nth-child(1), > :nth-child(3) {
+      width: $side;
+      display: flex;
+    }
+    > :nth-child(1) {
+      justify-content: flex-start;
+    }
+    > :nth-child(3) {
+      justify-content: flex-end
+    }
+
+    > :nth-child(2) {
+      width: 100% -$side -$side;
+    }
+
+  }
+}
+
+.header-title {
+  letter-spacing: 0.05rem;
+  font-size: 2.3rem;
+}
+
+.header-action {
+  letter-spacing: 0.12rem;
+  &:hover {
+    cursor: pointer;
+  }
+}

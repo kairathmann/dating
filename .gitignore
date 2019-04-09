@@ -1,0 +1,31 @@
+*.pyc
+.idea/
+.vscode/
+helios/.cache/
+helios/*.log
+
+# Static ignore
+static/src/node_modules/
+static/src/src/**/*.css
+static/src/src/views/**/*.css
+static/**/*.log
+static/src/build/
+
+# QTUM
+qtum/data/*
+qtum/data-regtest/*
+!.gitkeep
+qtum/luna_smart_contract/node_modules/
+#======================================
+# OS generated
+#--------------------------------------
+__MACOSX/
+.DS_Store
+Thumbs.db
+
+static/src/coverage
+database/
+luna-mnt/**/*.jpg
+venv/
+config.local.env
+config.env

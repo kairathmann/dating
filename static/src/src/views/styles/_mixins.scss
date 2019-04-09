@@ -1,0 +1,131 @@
+@import "./settings";
+@import "./respond-to";
+
+%center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%center-xy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%page {
+  height: 100%;
+  position: relative;
+}
+
+%column-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+%page-flex {
+  @extend %page;
+  @extend %column-flex;
+}
+
+%page-container {
+  padding: $page-container-padding;
+  background: $main-gray-bg-color;
+  overflow-y: auto;
+}
+
+%page-title {
+  //used in login \ register
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+%grow {
+  transition: all .2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+%button-disabled-style {
+  //works for btns that have `disabled` attribute
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+  }
+}
+
+@mixin _luna-float-shadow($float-height, $shadow-offset-x, $shadow-offset-y, $shadow-base-blur, $shadow-base-spread, $more-shadow: 0 0 0 0) {
+  box-shadow: $more-shadow, $shadow-offset-x $shadow-offset-y #{$shadow-base-blur * $float-height} #{$shadow-base-spread * $float-height} $float-shadow;
+}
+
+@mixin luna-float-shadow($float-height, $more-shadow: 0 0 0 0) {
+  @include _luna-float-shadow($float-height, $shadow-offset-x, $shadow-offset-y, $shadow-base-blur, $shadow-base-spread, $more-shadow)
+}
+
+@mixin luna-float-shadow-to-top($float-height, $more-shadow: 0 0 0 0) {
+  @include _luna-float-shadow($float-height, $shadow-offset-x, $shadow-offset-y * -1, $shadow-base-blur, $shadow-base-spread, $more-shadow)
+}
+
+@mixin luna-float-with-drop-shadow($float-height) { // for non-basic shapes
+  filter: drop-shadow($shadow-offset-x $shadow-offset-y #{$shadow-base-blur * $float-height} $float-shadow);
+}
+
+@mixin arrow-down($size, $color) {
+  width: 0rem;
+  height: 0rem;
+  border-left: $size solid transparent;
+  border-right: $size solid transparent;
+  border-top: $size solid $color;
+}
+
+@mixin round($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin respond-to($args...) {
+  @include _respond-to($args...) {
+    @content;
+  }
+}
+
+@mixin numberContainer($background-color, $size, $color: auto) {
+  // number surrounded by bg color, must keep constant number of digits +- (or change font-size of number),
+  // see: conversations page bar renders for example
+
+  .number-container { // must use this className
+    background-color: $background-color;
+    border-radius: 50%;
+    color: $color;
+
+    box-sizing: border-box;
+    height: $size;
+    width: $size;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .number { // must use this className
+      font-family: sans-serif; // for centering, looks almost the same. lato for some reason not centered
+    }
+  }
+}
+
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}

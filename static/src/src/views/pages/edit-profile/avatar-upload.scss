@@ -1,0 +1,46 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+
+.avatar-upload {
+  @extend %column-flex;
+  align-items: center;
+
+  margin: 2rem 0;
+
+  .avatar-wrapper {
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex;
+    border-radius: 50%;
+    overflow: hidden;
+
+    .loader-wrapper {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      .luna-loader {
+        @extend %center-xy;
+      }
+
+    }
+  }
+  .image-upload-error {
+    margin-bottom: 1.2rem;
+    color: red;
+  }
+
+  .upload-button {
+    font-size: 1.6rem;
+    border-radius: 3.3rem;
+    border: solid 1px $purple-text-color;
+    background: none;
+    color: $purple-text-color;
+    padding: 1rem;
+    cursor: pointer;
+
+    @extend %button-disabled-style;
+
+  }
+}

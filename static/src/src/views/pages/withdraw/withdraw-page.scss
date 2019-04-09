@@ -1,0 +1,152 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+
+.withdraw-page {
+  @extend %page-flex;
+
+  .token-header {
+    $height: 1.7rem;
+    min-height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    background-color: $primary-bg-color-dark;
+    color: white;
+
+    .star-icon {
+      height: $height;
+      vertical-align: text-top;
+      margin-left: 0.8rem;
+    }
+  }
+
+  .withdraw-container {
+    padding: $page-container-padding;
+    padding-bottom: 0;
+    text-align: initial;
+  }
+
+  .amount-container {
+    margin: 3rem 0;
+  }
+  .amount-text {
+    display: inline-block;
+    float: right;
+    margin-bottom: 1em;
+  }
+
+  .body {
+    flex: 1;
+    background: $main-gray-bg-color;
+  }
+
+  .destination-wrapper {
+    margin-top: 7rem;
+  }
+
+  .confirm-button {
+    margin-top: 9rem;
+    font-size: 3rem;
+    height: 7rem;
+    color: white;
+    width: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  .filled-button {
+    background-image: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+    border: none;
+
+    &:hover {
+      background: linear-gradient(90deg, $primary-gradient-hover-start, $primary-gradient-hover-end);
+    }
+
+  }
+
+  .input-group {
+    text-align: left;
+
+    .description {
+      margin-bottom: 2rem;
+      color: #6c727c;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      font-size: 1em;
+      border: none;
+      background: white;
+      height: 7.2rem;
+      margin: 0.6rem 0;
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+  }
+
+  .transaction-history {
+    padding: $medium-page-padding;
+    margin-top: 5rem;
+
+    .title {
+      margin-bottom: 1rem;
+      color: $purple-text-color;
+    }
+
+  }
+  .transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #e2e2e2;
+    color: $purple-text-color;
+    letter-spacing: 0.03rem;
+
+  }
+  .transaction-time-and-status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-size: 1.1rem;
+
+  }
+  .transaction-time, .amount-container .stars {
+    color: $light-purple-text-color;
+  }
+
+  .transaction-date {
+
+    .transaction-day {
+      font-size: 1.3rem;
+    }
+    .transaction-time {
+      margin-left: 0.7rem;
+    }
+  }
+
+  .transaction-status {
+    &.red {
+      color: $status-red
+    }
+    &.green {
+      color: $status-green
+    }
+  }
+  .amount-container {
+    font-size: 1.3rem;
+
+    .amount-sum {
+    }
+    .stars {
+      margin-left: 0.4rem;
+    }
+  }
+}

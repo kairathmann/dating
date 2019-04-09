@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional //EN">
+
+<html>
+
+{% include "partials/head_block.html" %}
+
+<body style="margin:0;padding:0;" dir="ltr" bgcolor="#ffffff">
+
+<table cellspacing="0" cellpadding="0" width="100%;" id="email_table" border="0" style="border-collapse:collapse;">
+
+    <tr>
+        <td id="email_content"
+            style="font-family:Helvetica Neue,Helvetica,Lucida Grande,tahoma,verdana,arial,sans-serif;background:#ffffff;">
+
+            <table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:collapse;">
+
+                <tr style="">
+                    <td height="20" style="line-height:20px;" colspan="3">&nbsp;</td>
+                </tr>
+
+                {% include "partials/luna_header.html" %}
+
+                {% include event_card %}
+
+                {% include "partials/unsubscribe_footer.html" %}
+
+            </table>
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>

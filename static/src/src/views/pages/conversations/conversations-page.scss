@@ -1,0 +1,58 @@
+@import "../../styles/settings";
+@import "../../styles/mixins";
+
+.conversations-page {
+  @extend %page-flex;
+
+  .main-page-container {
+    flex: 1;
+    @extend %column-flex;
+
+    .msg-box-limit-bar {
+      $color: $dark-blue-grey;
+      $side-padding: 1.5rem;
+      background-color: $color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.8rem $side-padding;
+
+      @include numberContainer($mustard-yellow-light, 3.7rem, $color);
+
+      .title {
+        color: white;
+        margin-left: $side-padding;
+      }
+    }
+
+    .unread-msgs-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      $side-padding: 1.6rem;
+
+      padding: 1.2rem $side-padding;
+      .title {
+        margin-right: 1rem; //todo: @amnon - should it be $side-padding?
+      }
+      @include numberContainer($mustard-yellow, 3rem);
+    }
+
+    .conversation-list {
+      flex: 1;
+    }
+
+    &.no-conversations {
+      background-image: url('./../../../images/palm-tree.svg');
+      background-repeat: no-repeat;
+      background-size: 50%;
+      background-position: center;
+
+      .no-conversations-msg {
+        font-size: 2rem;
+        margin-top: 6rem;
+      }
+    }
+
+  }
+}

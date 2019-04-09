@@ -1,0 +1,35 @@
+@import './../../../views/styles/settings';
+
+.my-profile-tooltip-container {
+  float: left;
+  .avatar {
+    margin: 0 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4rem;
+  }
+}
+
+.tooltip-container {
+  a, button {
+    font-size: 1.4rem !important;
+    color: $primary-color;
+    text-decoration: none;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    margin: 2rem 1rem 0 1rem;
+
+    &:hover {
+      color: #666;
+      padding-bottom: 1px;
+      border-bottom: 1px solid #666;
+    }
+  }
+
+  a {
+    margin-bottom: 4rem;
+  }
+  button {
+    border-radius: 0;
+  }
+}

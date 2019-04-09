@@ -1,0 +1,57 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+
+.conversation-item {
+  display: flex;
+  $padding: 1.2rem;
+
+  padding: $padding;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  border-bottom: 1px solid #e5e5e5;
+
+  img {
+    transition: all .2s ease-in-out; // todo: @gal - what is this for?
+  }
+
+  .avatar-container {
+    margin-right: $padding;
+    position: relative;
+    .unread-message-indicator {
+      @extend %center-y;
+      right: 0;
+      transform: translateX(50%) translateY(-50%); // translateY not from mixin since it's overridden
+      $size: 1.5rem;
+      height: $size;
+      width: $size;
+      background-color: $mustard-yellow;
+      border-radius: 50%;
+      border: solid #{$size / 5} white;
+    }
+  }
+
+  &:hover {
+    color: $primary-color;
+  }
+
+  .body-container {
+    flex: 1;
+    padding-top: $padding;
+    display: flex;
+
+    .body-main {
+      flex: 1;
+    }
+  }
+
+  a {
+    color: $primary-color; //todo: @gal - what links?
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+}

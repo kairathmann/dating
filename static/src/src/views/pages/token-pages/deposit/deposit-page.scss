@@ -1,0 +1,149 @@
+@import './../../../../views/styles/settings';
+@import './../../../../views/styles/mixins';
+@import './../../../../views/styles/ui-kit';
+
+.deposit-page {
+  @extend %page-flex;
+
+  .body {
+    flex: 1;
+    background: $main-gray-bg-color;
+  }
+  .deposit-container {
+    @extend %page-container;
+  }
+  .deposit-info {
+    color: $purple-text-color;
+    letter-spacing: 0.05rem;
+    margin: 0 4rem;
+    font-size: 2rem;
+    line-height: 3rem;
+
+    h1 {
+      font-size: 2.3rem;
+    }
+  }
+
+  .instruction-line {
+    display: flex;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    .num {
+      //padding: 1rem;
+      background-color: $primary-bg-color3;
+      border-radius: 50%;
+      $size: 3.6rem;
+      width: $size;
+      min-width: $size;
+      height: $size;
+      //text-align: center;
+      //vertical-align: center;
+      line-height: $size;
+      margin-right: 2rem;
+    }
+    .msg {
+      text-align: left;
+    }
+  }
+
+  .wallet-info {
+    $walletInfoMarginTop: 2.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    padding: $walletInfoMarginTop 4rem;
+    margin-top: 4.4rem;
+
+    @include luna-float-shadow(3);
+
+    .wallet-address-and-copy-container {
+      margin-bottom: $walletInfoMarginTop;
+    }
+    .wallet-address {
+      font-size: 1.6rem;
+      color: $purple-text-color;
+      display: inline-block;
+    }
+
+    .copy-icon {
+      vertical-align: middle;
+      font-size: 1.8rem;
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+    }
+  }
+
+  .to-transactions-btn {
+    //color: white;
+    //background-image: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+    @extend %auth-main-btn;
+    letter-spacing: 0.24rem;
+
+  }
+
+  .transaction-history {
+    padding: $medium-page-padding;
+
+    .title {
+      margin-bottom: 1rem;
+      color: $purple-text-color;
+    }
+
+  }
+  .transaction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid #e2e2e2;
+    color: $purple-text-color;
+    letter-spacing: 0.03rem;
+
+  }
+  .transaction-time-and-status-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    font-size: 1.1rem;
+
+  }
+  .transaction-time, .amount-container .stars {
+    color: $light-purple-text-color;
+  }
+
+  .transaction-date {
+
+    .transaction-day {
+      font-size: 1.3rem;
+    }
+    .transaction-time {
+      margin-left: 0.7rem;
+    }
+  }
+
+  .transaction-status {
+    &.red {
+      color: $status-red
+    }
+    &.green {
+      color: $status-green
+    }
+  }
+  .amount-container {
+    font-size: 1.3rem;
+
+    .amount-sum {
+    }
+    .stars {
+      margin-left: 0.4rem;
+    }
+  }
+
+  .withdraw-btn {
+    height: 6rem;
+  }
+}

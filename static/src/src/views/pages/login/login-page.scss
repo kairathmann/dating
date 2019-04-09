@@ -1,0 +1,56 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+@import './../../../views/styles/ui-kit';
+
+.login {
+  @extend %page;
+  @extend %page-container;
+  box-sizing: border-box;
+  text-align: left;
+
+  .title {
+    @extend %page-title;
+  }
+
+  .input-group {
+    @extend %input-group;
+    .description {
+      @extend %input-group-description;
+    }
+    .label {
+      @extend %input-group-label;
+    }
+    .input {
+      @extend %input-group-input;
+    }
+  }
+
+  .forgot {
+    margin-top: 2rem;
+    //font-size: 1.5rem;
+  }
+  a {
+    text-decoration: underline;
+    text-decoration-style: solid;
+  }
+
+  .submit-btn {
+    @extend %auth-main-btn;
+    &:disabled {
+      background-image: linear-gradient(to right, $disabled-btn-color, $disabled-btn-color);
+      background-color: $disabled-btn-color;
+      color: $purple-text-color;
+      cursor: auto;
+      &:hover {
+        background-image: linear-gradient(to right, $disabled-btn-color, $disabled-btn-color);
+        background-color: $disabled-btn-color;
+        color: $purple-text-color;
+      }
+    }
+  }
+
+  .errors {
+    color: #eb1477;
+    margin: 1.5em 0;
+  }
+}

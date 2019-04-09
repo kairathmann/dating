@@ -1,0 +1,151 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+@import './../../../views/styles/ui-kit';
+
+$transition-time: 1s;
+
+.welcome {
+  margin: 0 auto;
+  color: white;
+  position: relative;
+  @extend %page-flex;
+  .container {
+    @extend %page-flex;
+    padding: $page-container-padding;
+  }
+
+  z-index: 0;
+
+  overflow-x: hidden;
+  .background-luna {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    $padding-for-blur: 2.5%;
+    width: 100% + 2 * $padding-for-blur;
+    left: -$padding-for-blur;
+
+    transition: filter $transition-time;
+
+    // Mobile bg
+    @include respond-to($to: $main-break-point) {
+      background-color: rgba(#431845, 0.9);
+      background-image: url('./../../../images/woman@2x-min.jpg');
+      &.blurred {
+        filter: blur(0.7rem);
+      }
+    }
+    // Desktop bg
+    @include respond-to($from: $main-break-point) {
+      background-image: url('./../../../images/woman-horizontal.jpg');
+    }
+
+    background-position: center;
+    background-size: cover;
+  }
+
+  .header-container {
+    padding: 4rem 1rem;
+
+    @include respond-to($to: $main-break-point) {
+      padding-top: 8rem;
+    }
+
+    h1 {
+      display: inline-block;
+      font-size: 4.32rem;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+      letter-spacing: 0.03rem;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    h2.tag-line {
+      font-size: 2rem;
+      margin-top: 3rem;
+      font-weight: 400;
+      letter-spacing: 0.08rem;
+    }
+  }
+
+  .luna-logo {
+    height: 4rem;
+  }
+
+  .welcome-buttons {
+    font-weight: 300;
+    transition: opacity $transition-time;
+    &.hidden {
+      opacity: 0;
+    }
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    .welcome-button {
+
+      @extend %auth-main-btn;
+      max-width: 32rem;
+      background: none;
+    }
+
+    .filled-button {
+      background: linear-gradient(to right, $primary-gradient-start, $primary-gradient-end);
+      border: none;
+
+      &:hover {
+        background: linear-gradient(90deg, $primary-gradient-hover-start, $primary-gradient-hover-end);
+      }
+    }
+    .link-button {
+      border: none;
+      text-decoration: underline;
+      &:hover {
+        background: none;
+      }
+    }
+  }
+
+  .terms {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Desktop
+
+.welcome {
+  @include respond-to($from: $main-break-point) {
+
+    .container {
+      width: 33%;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 10%;
+    }
+
+    .welcome-buttons {
+      flex: initial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .terms, .welcome-buttons {
+      width: 100%;
+    }
+    .luna-logo {
+      height: 4rem;
+    }
+
+  }
+}

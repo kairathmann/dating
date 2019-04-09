@@ -1,0 +1,49 @@
+$main-break-point: 'medium';
+
+//FONTS
+$main-font: 'Lato', sans-serif;
+
+//COLORS
+$primary-color: #603a93;
+$primary-bg-color: #412657;
+$primary-bg-color2: #4a196f;
+$primary-bg-color3: #7e2d92; // todo: @amnon - plz make sure there's a single palette
+$primary-bg-color-dark: #29133b;
+$primary-text-color: #333333;
+$bg-light-color: #f6f6f6;
+$purple-text-color: #403c4a;
+$light-purple-text-color: #888199;
+$gray-text-color: #828282;
+$body-bg: #29133b;
+$float-shadow: rgba(0, 0, 0, 0.2);
+$main-gray-bg-color: #f7f7f7;
+$darker-gray-bg-color: #dbdbdb;
+$active-color: #9ca4d7;
+$disabled-color: #c3c3c3;
+$disabled-btn-color: #C5CBD5;
+$primary-gradient-start: #603695;
+$primary-gradient-end: #862b91;
+$primary-gradient-hover-start: #7643B7;
+$primary-gradient-hover-end: #9C35A9;
+$mustard-yellow: #ffe078;
+$mustard-yellow-light: #fdeeb5;
+$dark-blue-grey: #1a293c;
+$status-red: #c43273;
+$status-green: #37d765;
+
+$notification-success: #70d79e;
+
+//SIZES
+$medium-page-padding: 0.96rem;
+$minimal-page-padding: 0.64rem;
+$header-padding: 2.56rem;
+$page-container-padding: 3.2rem;
+$page-container-padding-smaller: 2.6rem;
+$page-container-padding-bigger: 6.6rem;
+
+//SHADOW
+$shadow-offset-x: -0.016rem;
+$shadow-offset-y: 0.16rem;
+$shadow-base-blur: 0.128rem;
+$shadow-base-spread: 0.064rem;
+// TODO - missing $more-shadow ?

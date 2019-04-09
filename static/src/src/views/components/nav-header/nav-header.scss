@@ -1,0 +1,17 @@
+@import './../../styles/settings';
+
+.nav-header {
+  i {
+    color: $active-color;
+  }
+  .active {
+    color: white;
+  }
+
+  .button.luna-icon {
+    img {
+      height: 3.5rem;
+    }
+  }
+
+}

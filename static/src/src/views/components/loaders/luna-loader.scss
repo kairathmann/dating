@@ -1,0 +1,48 @@
+@import "../../styles/settings";
+@import "../../styles/mixins";
+
+.luna-loader {
+
+  position: relative;
+  border-width: 2px;
+  border-style: dotted;
+  border-radius: 50%;
+
+  .avatar-round {
+    display: block;
+  }
+
+  .dot-circle {
+    transform-origin: 50% 50%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+
+    @keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    animation: spin 3s linear infinite;
+
+    .dot {
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: -1px; // half of border width ?
+      left: 50%;
+    }
+  }
+
+  .luna-logo {
+    @extend %center-xy;
+    //height: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+version: "3"
+services:
+  python:
+    container_name: helios
+    build: .
+    env_file:
+      - config.env
+      - imgix.env
+    environment:
+      - LUNA_DB_ENGINE=django.contrib.gis.db.backends.postgis
+      - LUNA_SECRET_KEY=0#05001e@o@@fczx13qhd_%aj5v@-w3r@^dmu8mgzzfo&f5s22
+      - PYTHONUNBUFFERED=0
+    ports:
+      - 8001:8001
+    volumes:
+      - ./luna-mnt:/mnt
+      - ./helios:/srv/luna/helios
+      - ./modules:/srv/luna/modules
+      - ./run_python_docker.sh:/srv/luna/run_python_docker.sh
+    command: /srv/luna/run_python_docker.sh
+    depends_on:
+      - postgres
+    links:
+      - postgres:postgres
+  postgres:
+    image: mdillon/postgis:10-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+    env_file:
+      - config.env
+    volumes:
+      - ./database/postgres:/var/lib/postgresql/data:z
+  nginx:
+    build:
+      context: .
+      dockerfile: ./config/nginx/Dockerfile
+    container_name: nginx
+    ports:
+      - 443:443
+    volumes:
+      - ./luna-mnt:/mnt
+      - ./static/dist:/srv/luna/static/dist
+    links:
+      - python:helios.local
+    dns_search:
+      - local

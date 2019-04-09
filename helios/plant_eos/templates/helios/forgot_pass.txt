@@ -1,0 +1,4 @@
+
+Hey {{ RECIPIENT_FIRST_NAME }}, to reset your password, click the link below
+
+Confirmation URL: {{ CONFIRM_URL }}

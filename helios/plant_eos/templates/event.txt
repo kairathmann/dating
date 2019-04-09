@@ -1,0 +1,8 @@
+
+{% include event_card %}
+
+This message was sent to {{ RECIPIENT_EMAIL }}
+
+If you want to change how often we send you messages, please update your email preferences.
+
+Sent by Luna, Blockchain Optimized Dating

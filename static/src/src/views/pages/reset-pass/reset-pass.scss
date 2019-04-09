@@ -1,0 +1,37 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+@import './../../../views/styles/ui-kit';
+
+.reset-pass-page {
+
+  @extend %page;
+  @extend %page-container;
+  box-sizing: border-box;
+  text-align: left;
+
+  .title {
+    @extend %page-title;
+  }
+
+  .input-group {
+    @extend %input-group;
+    .description {
+      @extend %input-group-description;
+    }
+    .label {
+      @extend %input-group-label;
+    }
+    .input {
+      @extend %input-group-input;
+    }
+  }
+
+  .submit-btn {
+    @extend %auth-main-btn;
+  }
+
+  .errors {
+    color: #eb1477;
+    margin: 1.5em 0;
+  }
+}

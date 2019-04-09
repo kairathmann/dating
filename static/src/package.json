@@ -1,0 +1,119 @@
+{
+  "name": "luna",
+  "version": "0.0.1",
+  "description": "Luna dating src",
+  "homepage": "https://app.meetluna.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lunalabs/luna.git"
+  },
+  "author": {
+    "name": "Gravity Analytics Limited",
+    "email": "luna@meetluna.com"
+  },
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=8.1.4"
+  },
+  "scripts": {
+    "eject": "react-scripts eject",
+    "build": "env-cmd .env.production run-s delete-old-build build:css build:js",
+    "build:local": "env-cmd .env.local run-s delete-old-build build:css build:js",
+    "build:staging": "env-cmd .env.staging run-s delete-old-build build:css build:js",
+    "build:css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "build:js": "react-scripts build && mv -f build ./../dist",
+    "build:fonts": "mv ./../dist/fonts ./../dist/static/",
+    "delete-old-build": "rm -rf ./../dist",
+    "start": "NODE_ENV=development run-p start:css start:js",
+    "start:css": "npm run build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start:js": "react-scripts start",
+    "test": "cross-env NODE_PATH=. jest",
+    "test:ci": "cross-env CI=true NODE_PATH=. jest --ci --env=jsdom",
+    "test:coverage": "cross-env CI=true NODE_PATH=. jest --coverage",
+    "eslint": "eslint src/ --max-warnings 0"
+  },
+  "dependencies": {
+    "axios": "0.17.0",
+    "babel-preset-env": "^1.7.0",
+    "classnames": "^2.2.5",
+    "clipboard": "1.7.1",
+    "env-cmd": "^8.0.1",
+    "eslint-plugin-react-app": "^3.0.0",
+    "history": "^4.6.3",
+    "humps": "^2.0.1",
+    "immutable": "^3.8.1",
+    "istanbul": "^0.4.5",
+    "lodash.range": "^3.2.0",
+    "moment-timezone": "0.5.13",
+    "prop-types": "^15.5.10",
+    "qrcode.react": "0.7.2",
+    "qs": "6.5.1",
+    "rc-progress": "^2.2.5",
+    "rc-slider": "8.4.0",
+    "react": "^16.2.0",
+    "react-cropper": "^1.0.1",
+    "react-datepicker": "0.61.0",
+    "react-dom": "^16.2.0",
+    "react-dropzone": "^4.2.3",
+    "react-image": "1.3.1",
+    "react-intl": "^2.4.0",
+    "react-moment": "0.7.0",
+    "react-portal-tooltip": "2.1.0",
+    "react-redux": "^5.0.5",
+    "react-responsive": "^4.0.3",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "react-scripts": "1.1.4",
+    "react-select": "1.2.1",
+    "react-tagsinput": "3.19.0",
+    "react-textarea-autosize": "5.1.0",
+    "react-toastify": "2.2.1",
+    "react-tooltip": "3.6.0",
+    "react-transition-group": "1.2.1",
+    "redux": "^3.7.1",
+    "redux-thunk": "^2.2.0",
+    "require-context": "^1.1.0",
+    "reselect": "^3.0.1",
+    "smartcrop": "^2.0.3",
+    "tracking": "^1.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.9.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "7.4.0",
+    "glob": "^7.1.2",
+    "jest": "^23.1.0",
+    "node-sass-chokidar": "^1.3.0",
+    "npm-run-all": "^4.0.2",
+    "react-hot-loader": "^4.3.3",
+    "react-test-renderer": "^16.4.1",
+    "redux-mock-store": "^1.5.3",
+    "sinon": "^2.4.1",
+    "supertest": "3.0.0"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 10,
+        "functions": 17,
+        "lines": 18,
+        "statements": 17
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{,js,jsx}"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/config/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js"
+    }
+  }
+}

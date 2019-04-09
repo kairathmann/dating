@@ -1,0 +1,51 @@
+
+.message-item {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+
+  &.align-right {
+    flex-direction: row-reverse;
+    .message-item-from {
+      padding-left: 0.7rem;
+    }
+  }
+  &:not(.align-right) {
+    .message-item-from {
+      padding-right: 0.7rem;
+    }
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  .avatar {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .message-item-from {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .message-body {
+    background-color: #34537b;
+    color: white;
+    border-radius: 1.6rem;
+    padding: 1rem 1.6rem;
+    text-align: start;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .is-from-user {
+    background-color: #ebe6e6;
+    color: black;
+  }
+  .unclickable {
+    cursor: auto
+  }
+}
+

@@ -1,0 +1,135 @@
+@import './../../../views/styles/settings';
+@import './../../../views/styles/mixins';
+@import './../../../views/styles/ui-kit';
+
+.edit-profile-page {
+  background: $main-gray-bg-color;
+
+  h1 {
+    font-size: 2.56rem;
+  }
+
+  .edit-profile-container {
+    padding: $page-container-padding;
+    padding-bottom: 0;
+    text-align: initial;
+
+  }
+
+  .top-avatar {
+    &:hover {
+      box-shadow: 1.1rem 1rem 2.3rem -1.5rem rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .name-and-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .description {
+    display: inline-block;
+    margin: 3rem 0 1.5rem 0;
+    font-weight: 700;
+    font-size: 110%;
+    letter-spacing: 0.4px;
+  }
+
+  .profile-img {
+    width: 30rem;
+    height: auto;
+  }
+
+  .age-container {
+    clear: both;
+    margin-bottom: 1em;
+  }
+
+  .inboxSize-container {
+    clear: both;
+    margin-bottom: 1em;
+  }
+
+  .textarea-description-container {
+    padding-left: $page-container-padding;
+    text-align: start;
+  }
+  .textarea {
+    width: 100%;
+    font-size: 95%;
+    box-sizing: border-box;
+    resize: none;
+    padding: 2rem;
+    border: 0;
+
+    &.tagline {
+      min-height: 10rem;
+    }
+    &.bio {
+      min-height: 24rem;
+    }
+  }
+
+  input {
+    width: 100%;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    padding: 0.5em;
+    box-sizing: border-box;
+
+  }
+
+  .submit-btn-container {
+    text-align: center;
+  }
+
+  .submit-btn {
+    @extend %auth-main-btn;
+    @extend %button-disabled-style;
+
+    margin: 1.5rem;
+    width: 30rem;
+  }
+
+  .age-picker {
+    .react-datepicker-wrapper {
+      width: 100%;
+      .react-datepicker__input-container {
+        width: 100%;
+      }
+    }
+    .react-datepicker {
+      select {
+        font-size: 1.4em;
+      }
+    }
+  }
+
+  .red {
+    margin-bottom: 1.2rem;
+    color: red;
+  }
+
+  .cropper-line, .cropper-point {
+    background-color: $primary-bg-color
+  }
+
+  .manage-account-container {
+    padding: 8px;
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .input-group {
+    @extend %input-group;
+
+    .description {
+      @extend %input-group-description;
+    }
+    .input {
+      @extend %input-group-input;
+    }
+  }
+}

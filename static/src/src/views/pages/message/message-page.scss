@@ -1,0 +1,41 @@
+@import "../../styles/settings";
+@import "../../styles/mixins";
+
+.message-page {
+  @extend %page;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .header {
+
+    h1 {
+      display: flex;
+      font-size: 2.72rem;
+      font-weight: normal;
+      margin: 0 auto;
+      cursor: pointer;
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  button {
+    &:hover {
+      color: $active-color;
+    }
+  }
+
+  .message-page-body {
+    flex: 1;
+    overflow: scroll;
+  }
+  .user-message-input {
+    background: white; // make sure this is the same as page bg
+  }
+  .waiting-for-approval-msg {
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+{# DISPLAYS A GENERIC HTML PAGE THAT LOADS THE JS FRONTEND #}
+
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    {{ BROWSER_TITLE }}
+
+    {% for URL in CSS_HEAD %}
+    <link rel="stylesheet" href="{{ URL | safe }}"/>
+    {% endfor %}
+    {% for URL in JS_HEAD %}
+    <script src="{{ URL | safe }}"></script>
+    {% endfor %}
+
+</head>
+
+<body>
+{{ CONTENT | safe }}
+</body>
+
+</html>

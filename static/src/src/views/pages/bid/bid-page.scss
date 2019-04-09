@@ -1,0 +1,214 @@
+@import "../../styles/settings";
+@import "../../styles/mixins";
+
+.bid-page {
+  @extend %page;
+
+  .header {
+
+    .star-counter {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .text {
+        font-size: 90%;
+      }
+      .star {
+        height: 1.3rem;
+        vertical-align: middle;
+        margin-left: 0.64rem;
+      }
+    }
+
+  }
+
+  .main-page-container {
+    @extend %page-container;
+  }
+
+  .bidding-headers {
+    padding: 3.2rem 0;
+    .bidding-header {
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  $spaceForTip: 4.8rem;
+
+  .bid-likability-tip {
+    $tipBgColor: white;
+
+    display: block;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+
+    padding: 0.64rem;
+    border-radius: 0.48rem;
+    background: $tipBgColor;
+    border: 1px solid white;
+
+    @include luna-float-shadow(1);
+
+    .star {
+      height: 1em;
+      vertical-align: text-top;
+    }
+    .tip-triangle-wrapper {
+      position: absolute;
+      top: 103%; //+3 is magic, looks better with shadow
+      $wrapperSize: 0.8rem;
+
+      @include arrow-down($wrapperSize, $float-shadow);
+      .tip-triangle {
+        position: absolute;
+        top: -$wrapperSize * 1.05; /* 1.05 =  slight magic positioning for shadow 1 px line */
+        left: -$wrapperSize * 0.8;
+        @include arrow-down($wrapperSize * 0.8, $tipBgColor);
+      }
+
+    }
+  }
+
+  $slider-fixed-width: 28.8rem;
+
+  .bid-slider-tip-wrapper {
+    position: relative;
+    padding-top: $spaceForTip;
+    width: $slider-fixed-width; // todo: add media queries
+    max-width: 100%; // fallback for really small screens
+    margin: auto;
+  }
+  .bid-slider {
+    $bg: #e7e7e7;
+    $dot: #a6a1b2;
+    $border: 0.24rem solid white;
+    $circlePadding: 0.48rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    margin-bottom: 3.2rem;
+
+    .bid-slider-bg {
+      width: 100%;
+      @include luna-float-with-drop-shadow(1)
+
+    }
+    .SliderSVGComp {
+      position: absolute;
+    }
+
+    .avatar-circle-wrapper {
+      position: absolute;
+      right: 0.72rem; // MAGIC, based on $slider-fixed-width
+      display: flex;
+      .avatar-round {
+        box-shadow: none;
+      }
+    }
+
+    .slider-wrapper {
+      position: absolute;
+      left: 0.32rem;
+      top: 0;
+      height: 100%;
+      width: 85%; // MAGIC!
+      display: flex;
+      align-items: center;
+    }
+
+    //input[type=range]::-moz-focus-outer {
+    //  border: 0 !important;
+    //}
+    //
+    //input[type=range]:focus {
+    //  outline: none !important;
+    //}
+
+    .slider {
+      flex: 1;
+      position: absolute;
+      left: 0.16rem;
+
+      outline: none;
+
+      -webkit-appearance: none;
+
+      &::-moz-focus-inner, &::-moz-focus-outer {
+        border: 0;
+        outline: none;
+      }
+      input[type=range]:focus {
+        outline: none;
+      }
+
+      margin: 0;
+      background: rgba(0, 0, 0, 0);
+      width: 100%;
+      $thumb-height: 4.48rem;
+
+      /*
+      as mixins so it will be duplicated and won't break other browsers are not supported
+      */
+
+      @mixin track() {
+        width: 100%;
+        height: 0px;
+        cursor: pointer;
+        //background: black;
+        outline: 0;
+      }
+      @mixin thumb() {
+        height: $thumb-height;
+        width: $thumb-height;
+        border-radius: 50%;
+        background: rgba(247, 247, 247, 0.8);
+        border: 1px solid purple;
+        cursor: pointer;
+        @include luna-float-shadow(1);
+        outline: 0;
+      }
+
+      &::-ms-track {
+        @include track();
+      }
+      &::-moz-range-track {
+        @include track();
+      }
+      &::-webkit-slider-runnable-track {
+        @include track();
+      }
+
+      &::-moz-range-thumb {
+        @include thumb();
+      }
+
+      &::-ms-thumb {
+        @include thumb();
+      }
+
+      &::-webkit-slider-thumb {
+        @include thumb();
+        -webkit-appearance: none;
+        transform: translateY(-50%);
+      }
+
+      // todo: important! make sure this looks good for moz and ms !!! or change to rc-slider
+
+      /*
+         &::-moz-range-track {
+          }
+          &::-moz-range-thumb {
+          }
+          &::-ms-track {
+          }
+          &::-ms-fill-lower, &::-ms-fill-upper {
+          }
+          &::-ms-thumb {
+          }
+          */
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@import "../../styles/settings";
+
+.message-list {
+  //border: 1px solid #ccc; // was that used for something?
+  overflow-y: scroll;
+  .message-list-avatar-container {
+    cursor: pointer;
+    height: 30vh;
+    background-color: $main-gray-bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .message-list-messages {
+    padding: $medium-page-padding;
+  }
+  .unclickable {
+    cursor: auto;
+  }
+}

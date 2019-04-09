@@ -1,0 +1,7 @@
+
+{{ AUTHOR_NAME }} sent you a direct message at {{ DATE_TIME }}
+
+Message URL: {{ MESSAGE_URL }}
+Subject: {{ MESSAGE_SUBJECT }}
+Body: {{ MESSAGE_BODY }}
+

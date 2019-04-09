@@ -1,0 +1,4 @@
+
+Hey {{ RECIPIENT_FIRST_NAME }}, to complete your Luna registration, please click the link below
+
+Confirmation URL: {{ CONFIRM_URL }}
